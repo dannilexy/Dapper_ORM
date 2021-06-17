@@ -22,7 +22,29 @@ namespace DapperORM2.Models
         }
 
 
+        //For Getting an Object in case The code below doesnt work as in some cases
+        //public string GetCustomerClaimById(int id)
+        //{
+        //    try
+        //    {
+
+        //        var claim = sqlCon.Query<ClaimDetails>("usp_CustomerClaimsById", new { id = id }, commandType: System.Data.CommandType.StoredProcedure).SingleOrDefault();
+
+
+        //        return claim;
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
+
         //DapperORM.ExecuteReturnScalar<int>(_,_);
+
+
         public static T ExecuteReturnScalar<T>(string procedureName, DynamicParameters param = null)
         {
             using (SqlConnection sqlconn = new SqlConnection(ConnectionString))
